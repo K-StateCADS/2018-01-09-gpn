@@ -276,9 +276,8 @@ and our administrator may contact you if we need any extra information.</h4>-->
   please preview your site before committing, and make sure to run
   'tools/check' as well.
 -->
-<div class="row">
-  <div class="col-md-12">
 <h2 id="setup">Setup</h2>
+
 <p>
   To participate in a
   {% if page.carpentry == "swc" %}
@@ -297,69 +296,54 @@ and our administrator may contact you if we need any extra information.</h4>-->
   that may be useful on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
-	</div>
-</div>
-<div class="row">
- <div class="col-md-12">
-	<div id="shell"> <!-- Start of 'shell' section. -->
+
+<div id="shell"> {% comment %} Start of 'shell' section. {% endcomment %}
   <h3>The Bash Shell</h3>
 
   <p>
     Bash is a commonly-used shell that gives you the power to do simple
     tasks more quickly.
   </p>
-	</div>
+
   <div class="row">
     <div class="col-md-4">
       <h4 id="shell-windows">Windows</h4>
       <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
       <ol>
-        <li>Download the Git for Windows <a href="http://gitforwindows.org/">installer</a>.</li>
-        <li>Run the installer and follow the steps below:
+        <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
+        <li>Run the installer and follow the steps bellow:
           <ol>
-            <!-- Git 2.15.1.2 Setup -->
-            <!-- Information -->
+            {% comment %} Git 2.8.2 Setup {% endcomment %}
+            {% comment %} Information {% endcomment %}
             <li>Click on "Next".</li>
-            <!-- Select Destination -->
+            {% comment %} Select Components {% endcomment %}
             <li>Click on "Next".</li>
-            <!-- Select Components -->
-            <li>Click on "Next".</li>
-            <!-- Select Start Menu Folder -->
-            <li>Click on "Next".</li>
-            <!-- Choosing the default editor -->
-            <li>
-              <strong>
-                Choose "Use the Nano editor by default" and click on "Next".
-              </strong>
-            </li>
-            <!-- Adjusting your PATH environment -->
+            {% comment %} Adjusting your PATH environment {% endcomment %}
             <li>
               <strong>
                 Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
               </strong>
-                If you make a different selection, the programs that you need for the workshop will not work properly.
-                If this happens rerun the installer and keep the default choice selected.
+                If you forgot to do this programs that you need for the workshop will not work properly.
+                If this happens rerun the installer and select the appropriate option.
             </li>
-            <!-- Choosing the SSH executable -->
+            {% comment %} Choosing the SSH executable {% endcomment %}
             <li>Click on "Next".</li>
-            <!-- Choose HTTPS transport -->
-            <li>Click on "Next".</li>
-            <!-- Configuring the line ending conversions -->
+            {% comment %} Configuring the line ending conversions {% endcomment %}
             <li>
               <strong>
                 Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
               </strong>
             </li>
-            <!-- Configuring the terminal emulator to use with Git Bash -->
+            {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
             <li>
               <strong>
-                Choose "Use Windows' default console window" and click on "Next".
+                Keep "Use Windows' default console window" selected and click on "Next".
               </strong>
             </li>
-            <!-- Configuring extra options -->
-            <li>Click on "Install"</li>
-            <!-- Installing -->
-            <!-- Completing the Git Setup Wizard -->
+            {% comment %} Configuring experimental performance tweaks {% endcomment %}
+            <li>Click on "Install".</li>
+            {% comment %} Installing {% endcomment %}
+            {% comment %} Completing the Git Setup Wizard {% endcomment %}
             <li>Click on "Finish".</li>
           </ol>
         </li>
@@ -379,9 +363,9 @@ and our administrator may contact you if we need any extra information.</h4>-->
       <p>This will provide you with both Git and Bash in the Git Bash program.</p>
     </div>
     <div class="col-md-4">
-      <h4 id="shell-macosx">Mac OS X</h4>
+      <h4 id="shell-macosx">macOS</h4>
       <p>
-        The default shell in all versions of Mac OS X is Bash, so no
+        The default shell in all versions of macOS is Bash, so no
         need to install anything.  You access Bash from the Terminal
         (found in
         <code>/Applications/Utilities</code>).
@@ -401,17 +385,71 @@ and our administrator may contact you if we need any extra information.</h4>-->
       </p>
     </div>
   </div>
-</div> 
-	</div><!-- End of 'shell' section. -->
-</br>
-<p>
-<div id="editor"> <!-- Start of 'editor' section. -->
+</div> {% comment %} End of 'shell' section. {% endcomment %}
+
+<div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
+           is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
+  <h3>Git</h3>
+  <p>
+    Git is a version control system that lets you track who made changes
+    to what when and has options for easily updating a shared or public
+    version of your code
+    on <a href="https://github.com/">github.com</a>. You will need a
+    <a href="https://help.github.com/articles/supported-browsers/">supported</a>
+    web browser (current versions of Chrome, Firefox or Safari,
+    or Internet Explorer version 9 or above).
+  </p>
+  <p>
+    You will need an account at <a href="https://github.com/">github.com</a>
+    for parts of the Git lesson. Basic GitHub accounts are free. We encourage
+    you to create a GitHub account if you don't have one already.
+    Please consider what personal information you'd like to reveal. For
+    example, you may want to review these
+    <a href="https://help.github.com/articles/keeping-your-email-address-private/">instructions
+    for keeping your email address private</a> provided at GitHub.
+  </p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4 id="git-windows">Windows</h4>
+      <p>
+        Git should be installed on your computer as part of your Bash
+        install (described above).
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="git-macosx">macOS</h4>
+      <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">Video Tutorial</a>
+      <p>
+        <strong>For OS X 10.9 and higher</strong>, install Git for Mac
+        by downloading and running the most recent "mavericks" installer from
+        <a href="http://sourceforge.net/projects/git-osx-installer/files/">this list</a>.
+        After installing Git, there will not be anything in your <code>/Applications</code> folder,
+        as Git is a command line program.
+        <strong>For older versions of OS X (10.5-10.8)</strong> use the
+        most recent available installer labelled "snow-leopard"
+        <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="git-linux">Linux</h4>
+      <p>
+        If Git is not already available on your machine you can try to
+        install it via your distro's package manager. For Debian/Ubuntu run
+        <code>sudo apt-get install git</code> and for Fedora run
+        <code>sudo dnf install git</code>.
+      </p>
+    </div>
+  </div>
+</div> {% comment %} End of 'Git' section. {% endcomment %}
+
+<div id="editor"> {% comment %} Start of 'editor' section. {% endcomment %}
   <h3>Text Editor</h3>
 
   <p>
     When you're writing code, it's nice to have a text editor that is
     optimized for writing code, with features like automatic
-    color-coding of key words.  The default text editor on Mac OS X and
+    color-coding of key words.  The default text editor on macOS and
     Linux is usually set to Vim, which is not famous for being
     intuitive.  if you accidentally find yourself stuck in it, try
     typing the escape key, followed by <code>:q!</code> (colon, lower-case 'q',
@@ -423,9 +461,9 @@ and our administrator may contact you if we need any extra information.</h4>-->
       <h4 id="editor-windows">Windows</h4>
       <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
       <p>
-        nano is a basic editor and the default that instructors use in the workshop. If you have installed Git for Windows version 2.15.1.2 as part of the Bash Shell setup (above), you do not need to install nano separately.
-        For Git for Windows versions older than 2.15.1.2, install nano by
-        downloading the <a href="{{site.swc_installer}}">
+        nano is a basic editor and the default that instructors use in the workshop.
+        To install it,
+        download the <a href="{{site.swc_installer}}">
           {% if page.carpentry == "swc" %}
           Software Carpentry
           {% elsif page.carpentry == "dc" %}
@@ -434,14 +472,13 @@ and our administrator may contact you if we need any extra information.</h4>-->
           Library Carpentry
           {% endif %}
           Windows installer
-	</a>.
-        Double click on the file to run it.
+	</a>
+        and double click on the file to run it.
         <strong>This installer requires an active internet connection.</strong>
       </p>
       <p>
         Others editors that you can use are
-        <a href="http://notepad-plus-plus.org/">Notepad++</a>,
-        <a href="http://atom.io/">Atom</a>, or
+        <a href="http://notepad-plus-plus.org/">Notepad++</a> or
         <a href="http://www.sublimetext.com/">Sublime Text</a>.
         <strong>Be aware that you must
           add its installation directory to your system path.</strong>
@@ -449,7 +486,7 @@ and our administrator may contact you if we need any extra information.</h4>-->
       </p>
     </div>
     <div class="col-md-4">
-      <h4 id="editor-macosx">Mac OS X</h4>
+      <h4 id="editor-macosx">macOS</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
         See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
@@ -458,7 +495,7 @@ and our administrator may contact you if we need any extra information.</h4>-->
       </p>
       <p>
         Others editors that you can use are
-        <a href="http://atom.io/">Atom</a> or
+        <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
         <a href="http://www.sublimetext.com/">Sublime Text</a>.
       </p>
     </div>
@@ -476,10 +513,8 @@ and our administrator may contact you if we need any extra information.</h4>-->
       </p>
     </div>
   </div>
-	</p>
- <!-- End of 'editor' section. -->
+</div> {% comment %} End of 'editor' section. {% endcomment %}
 
-	</br>
 <p>
 <div id="mat">
 <h3>MATLAB</h3>
